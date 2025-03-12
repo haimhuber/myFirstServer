@@ -1,0 +1,22 @@
+{
+    "theCars": [
+        {
+            "manufacturer": "Mazda",
+            "model": "6",
+            "year": 2020,
+            "plate": "abc123"
+        },
+        {
+            "manufacturer": "Ford",
+            "model": "Focus",
+            "year": 2020,
+            "plate": "aaagb5"
+        },
+        {
+            "manufacturer": "Toyota",
+            "model": "Rav4",
+            "year": 2014,
+            "plate": "ghk111"
+        }
+    ]
+}
