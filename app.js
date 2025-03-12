@@ -11,11 +11,14 @@ let user = {
 app.use(express.static('public'));
 app.use(express.json()); // parse body of POST requests
 
-//-------- send json from a file using express --------
-const path = require('path');
 app.get('/hello', (req, res) => {
-    res.sendFile(path.join(__dirname, './users.json'));
+    res.redirect("/my-other-route");
 });
+
+app.get('/my-other-route', (req, res) => {
+    res.send("hi from other route");
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
