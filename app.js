@@ -11,14 +11,18 @@ let user = {
 app.use(express.static('public'));
 app.use(express.json()); // parse body of POST requests
 
-app.get('/hello', (req, res) => {
-    res.redirect("/my-other-route");
+app.get('/users/:userId', (req, res) => {
+    console.log(req.params);
+    console.log(req.params.userId);
+    res.send(`You requested user with Id = ${req.params.userId}`);
 });
 
-app.get('/my-other-route', (req, res) => {
-    res.send("hi from other route");
+app.get('/users/:userId/:carIndex', (req, res) => {
+    console.log(req.params);
+    console.log(req.params.userId);
+    console.log(req.params.carIndex);
+    res.send(`You requested the car number ${req.params.carIndex} of user with Id = ${req.params.userId}`);
 });
-
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
