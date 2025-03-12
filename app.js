@@ -11,17 +11,11 @@ let user = {
 app.use(express.static('public'));
 app.use(express.json()); // parse body of POST requests
 
-app.get('/users/:userId', (req, res) => {
-    console.log(req.params);
-    console.log(req.params.userId);
-    res.send(`You requested user with Id = ${req.params.userId}`);
-});
-
-app.get('/users/:userId/:carIndex', (req, res) => {
-    console.log(req.params);
-    console.log(req.params.userId);
-    console.log(req.params.carIndex);
-    res.send(`You requested the car number ${req.params.carIndex} of user with Id = ${req.params.userId}`);
+app.get('/hello', (req, res) => {
+    console.log(req.query);
+    console.log(req.query.article);
+    console.log(req.query.subject);
+    res.send(`You sent a query param named article, with value = ${req.query.article}   And subject with value = ${req.query.subject}`);
 });
 
 app.listen(port, () => {
